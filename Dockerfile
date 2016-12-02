@@ -7,8 +7,7 @@ RUN yum -y install \
         libhal.so.1 \
         rpm-devel.i686 \
         libXt.so.6 \
-        gnome-keyring-devel.i686 \
-        libDCOP.so.4 \
+        gnome-keyring-devel.i686 \        
         libxml2-devel.i686 \
         nss-devel.i686 \
         PackageKit-gtk-module.i686 \
@@ -19,8 +18,10 @@ RUN yum -y install \
         libxslt.i686 \
         sudo \
         wget \
-        Xvfb
+        Xvfb && \
+        yum clean all
 
+# libDCOP.so.4 \
 RUN useradd scratchy && \
     echo -e "Defaults:scratchy !requiretty\nscratchy ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/scratchy && \
     chmod 0440 /etc/sudoers.d/scratchy
@@ -29,15 +30,16 @@ USER scratchy
 WORKDIR /home/scratchy
 ENV HOME /home/scratchy
 
-RUN mkdir -p /home/scratchy/Downloads && \
+RUN mkdir -p /home/scratchy/Downloads /home/scratchy/Documents && \
     cd /home/scratchy/Downloads && \
     wget http://airdownload.adobe.com/air/lin/download/2.6/AdobeAIRInstaller.bin && \
     chmod +x AdobeAIRInstaller.bin && \
     wget https://scratch.mit.edu/scratchr2/static/sa/Scratch-451.air && \
-    chmod +x Scratch-451.air
-
-RUN Xvfb :1 & \
+    chmod +x Scratch-451.air && \
+    ( Xvfb :1 & ) && \
     export DISPLAY=:1 && \
-    sudo /home/scratchy/Downloads/AdobeAIRInstaller.bin -silent -eulaAccepted /home/scratchy/Downloads/Scratch-451.air
+    sudo /home/scratchy/Downloads/AdobeAIRInstaller.bin -silent -eulaAccepted /home/scratchy/Downloads/Scratch-451.air && \
+    sudo ln -s /opt/Scratch\ 2/bin/Scratch\ 2 /usr/bin/scratch && \
+    rm -f /home/scratchy/Downloads/*
 
 CMD /usr/bin/scratch
