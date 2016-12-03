@@ -14,7 +14,7 @@ Linux systems with the help of [Singularity](http://singularity.lbl.gov/).
 Usage
 -----
 
-Tested on [CentOS](https://www.centos.org/) 7.
+Tested on [CentOS](https://www.centos.org/) 7. Doesn't require Docker to be installed on your machine.
 
 1. [Install](http://singularity.lbl.gov/install-linux) Singularity on your machine 
 2. Download Singularity bootstrap definition:
