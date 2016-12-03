@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: dtschan/scratch2-singularity:dev
+From: dtschan/scratch2-singularity:latest
 Registry: quay.io
 Token: no
 
