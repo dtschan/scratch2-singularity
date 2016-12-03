@@ -2,3 +2,6 @@ Bootstrap: docker
 From: dtschan/scratch2-singularity:dev
 Registry: quay.io
 Token: no
+
+%runscript
+  exec /usr/bin/scratch "$@"
