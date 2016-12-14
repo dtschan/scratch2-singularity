@@ -16,13 +16,11 @@ yum -y install \
     gtk2-engines.i686 \
     libxslt \
     libxslt.i686 \
-    sudo
+    patch
 
 yum -y install Xvfb
     
 useradd scratchy
-#echo -e "Defaults:scratchy !requiretty\nscratchy ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/scratchy
-#chmod 0440 /etc/sudoers.d/scratchy
 
 mkdir -p /home/scratchy/Downloads /home/scratchy/Documents
 cd /home/scratchy/Downloads
@@ -33,9 +31,9 @@ chmod +x Scratch-451.air
 
 Xvfb :1 &
 export DISPLAY=:1
-#sudo
 /home/scratchy/Downloads/AdobeAIRInstaller.bin -silent -eulaAccepted /home/scratchy/Downloads/Scratch-451.air
-#sudo
+cd /opt/Scratch\ 2/share/locale
+patch </tmp/de-wedo2.po.patch
 ln -s /opt/Scratch\ 2/bin/Scratch\ 2 /usr/bin/scratch
 rm -f /home/scratchy/Downloads/*
 

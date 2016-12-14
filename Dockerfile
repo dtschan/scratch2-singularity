@@ -1,6 +1,6 @@
 FROM centos:6
 
-ADD install.sh /tmp
+ADD install.sh *.patch /tmp/
 RUN /tmp/install.sh
  
 USER scratchy

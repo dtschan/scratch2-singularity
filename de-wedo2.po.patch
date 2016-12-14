@@ -1,0 +1,78 @@
+--- de.po.orig	2016-12-14 20:01:02.226616434 +0100
++++ de.po	2016-12-14 20:53:18.635126169 +0100
+@@ -309,6 +309,75 @@
+ msgid "set %m.motor power to %n"
+ msgstr "setze Leistung von %m.motor auf %n"
+ 
++msgid "set %m.motor direction to %m.motorDirection"
++msgstr "setze Drehrichtung von %m.motor auf %m.motorDirection"
++
++msgid "motor"
++msgstr "Motor"
++
++msgid "motor A"
++msgstr "Motor A"
++
++msgid "motor B"
++msgstr "Motor B"
++
++msgid "all motors"
++msgstr "alle Motoren"
++
++msgid "voltage"
++msgstr "Spannung"
++
++msgid "current"
++msgstr "Strom"
++
++msgid "sensorA"
++msgstr "Sensor A"
++
++msgid "sensorB"
++msgstr "Sensor B"
++
++msgid "set light to %m.lightColor"
++msgstr "setze Licht auf %m.lightColor" 
++
++msgid "pink"
++msgstr "rosa"
++
++msgid "purple"
++msgstr "violett"
++
++msgid "blue"
++msgstr "blau"
++
++msgid "sky blue"
++msgstr "hellblau"
++
++msgid "teal"
++msgstr "blaugrün"
++
++msgid "green"
++msgstr "grün"
++
++msgid "yellow"
++msgstr "gelb"
++
++msgid "orange"
++msgstr "orange"
++
++msgid "red"
++msgstr "rot"
++
++msgid "white"
++msgstr "weiss"
++
++msgid "button pressed?"
++msgstr "Knopf gedrückt?"
++
++msgid "tilted %m.tiltDirAny ?"
++msgstr "%m.tiltDirAny geneigt?"
++
++msgid "play %m.playNote %m.playOctave for %n secs"
++msgstr "spiele %m.playNote %m.playOctave für %n Sekunden"
++
+ msgid "set pen color to %c"
+ msgstr "setze Stiftfarbe auf %c"
+ 
