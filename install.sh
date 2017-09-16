@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-SCRATCH2_VERSION=456.0.3
+SCRATCH2_VERSION=456.0.4
 
 yum -y install \
     ld-linux.so.2 \
