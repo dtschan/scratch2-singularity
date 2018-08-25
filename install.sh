@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-SCRATCH2_VERSION=461
+SCRATCH2_VERSION=453
 
 yum -y install \
     ld-linux.so.2 \
@@ -18,7 +18,14 @@ yum -y install \
     gtk2-engines.i686 \
     libxslt \
     libxslt.i686 \
-    patch
+    patch \
+    liberation-mono-fonts \
+    liberation-sans-fonts \
+    liberation-serif-fonts \
+    dejavu-sans-fonts \
+    dejavu-sans-mono-fonts \
+    dejavu-serif-fonts \
+    urw-fonts
 
 yum -y install Xvfb
     
@@ -43,3 +50,4 @@ chown -R scratchy.scratchy /home/scratchy
 
 yum -y history undo last 
 yum clean all
+
